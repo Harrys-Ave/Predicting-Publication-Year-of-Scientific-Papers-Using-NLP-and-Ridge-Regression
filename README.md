@@ -22,15 +22,12 @@ This project focuses on predicting the publication year of scientific papers usi
    - **Vectorization**: TFidf, Count, and Hashing Vectorizers were tested; Hashing Vectorizer was selected with ngram configurations per feature to capture specific word patterns.
    - **Dimensionality Reduction**: Due to computational constraints, TruncatedSVD was employed with `n_components=90`.
    - **Stop Word Removal and Clipping**: Stopwords were removed with no substantial impact on MAE; the `year` feature was clipped to a maximum of 2023.
-
-### 3. Data Split
-   - 80% of the data was used for training and 20% for validation. After model evaluation, the sets were recombined for final tuning. 
    
-### 4. Model Selection and Training
+### 3. Model Selection and Training
    - **Model Candidates**: A variety of models were tested, including Ridge, Lasso, ElasticNet, Random Forest, Gradient Boosting, AdaBoost, SVR, and MLP regressors.
    - **Best Model**: Ridge Regression achieved the lowest MAE of 3.2 on the validation set, selected for its balance of accuracy and efficiency.
    
-### 5. Hyperparameter Tuning
+### 4. Hyperparameter Tuning
    - **RandomizedSearchCV**: Chosen for hyperparameter tuning to balance computational demands and efficiency, confirming Ridge’s default solver and alpha parameters as optimal.
 
 ## Results and Findings
